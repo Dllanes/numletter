@@ -1,4 +1,4 @@
-package main
+package numtoletter
 
 import (
 	"fmt"
@@ -157,9 +157,5 @@ func ConvertGroup( n string ) string {
 	}
 
 	return final
-
-}
-
-func main() {
 
 }
