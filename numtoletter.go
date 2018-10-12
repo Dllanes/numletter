@@ -66,11 +66,11 @@ func Num2Letter(numero, moneda, centimos string, ForzarCentimos bool) string {
 		if len(decNumberStr) == 2 {
 			decNumberStrFill := strings.Repeat("0", 7) + decNumberStr
 			decCientos := decNumberStrFill[6 : ]
-			decimales = ConvertGroup1(decCientos)
+			decimales = ConvertGroup(decCientos)
 		}else{
 			decNumberStrFill := strings.Repeat("0", 7) + decNumberStr + strings.Repeat("0", 2)
 			decCientos := decNumberStrFill[6 : ]
-			decimales = ConvertGroup1(decCientos)
+			decimales = ConvertGroup(decCientos)
 		}
 	}else{
 		if len(div_decimales) == 1 && ForzarCentimos {
@@ -91,19 +91,19 @@ func Num2Letter(numero, moneda, centimos string, ForzarCentimos bool) string {
 			if millones == "001" {
 				convertido += "UN MILLON "
 			}else {
-				convertido += fmt.Sprintf("%sMILLONES ", ConvertGroup1(millones) )
+				convertido += fmt.Sprintf("%sMILLONES ", ConvertGroup(millones) )
 			}
 		}
 
 		if f, _ := strconv.Atoi(miles); f > 0 {
 
-			convertido += fmt.Sprintf("%sMIL ", ConvertGroup1(miles) )
+			convertido += fmt.Sprintf("%sMIL ", ConvertGroup(miles) )
 
 		}
 
 		if f, _ := strconv.Atoi(cientos); f > 0 {
 
-			convertido += ConvertGroup1(cientos)
+			convertido += ConvertGroup(cientos)
 
 		}
 
@@ -119,7 +119,7 @@ func Num2Letter(numero, moneda, centimos string, ForzarCentimos bool) string {
 				if millones == "001" {
 					convertido += "UN MILLON DE "
 				}else {
-					convertido += fmt.Sprintf("%sMILLONES DE ", ConvertGroup1(millones) )
+					convertido += fmt.Sprintf("%sMILLONES DE ", ConvertGroup(millones) )
 				}
 			}
 			valor_convertido = convertido + strings.ToUpper(moneda)
@@ -134,7 +134,7 @@ func Num2Letter(numero, moneda, centimos string, ForzarCentimos bool) string {
 
 }
 
-func ConvertGroup1( n string ) string {
+func ConvertGroup( n string ) string {
 	final := ""
 
 	if n[0] != '0' {
