@@ -1,4 +1,4 @@
-package num-letter
+package numletter
 
 import (
 	"fmt"
