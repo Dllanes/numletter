@@ -6,7 +6,7 @@ import (
 	"strconv"
 )
 
-var Unidades = []string{
+var unidades = []string{
 	"",
 	"UN ",
 	"DOS ",
@@ -30,7 +30,7 @@ var Unidades = []string{
 	"VEINTE ",
 }
 
-var Decenas = []string{
+var decenas = []string{
 	"VENTI",
     "TREINTA ",
     "CUARENTA ",
@@ -41,7 +41,7 @@ var Decenas = []string{
     "NOVENTA ",
 }
 
-var Centenas = []string{
+var centenas = []string{
 	"CIENTO ",
     "DOSCIENTOS ",
     "TRESCIENTOS ",
@@ -141,18 +141,18 @@ func ConvertGroup1( n string ) string {
 		if n == "100" {
 			return "CIEN "
 		}
-		final += Centenas[n[0]-49]
+		final += centenas[n[0]-49]
 	}
 
 	k, _ := strconv.Atoi(n[1 : ])
 
 	if k <= 20 {
-		final += Unidades[k]
+		final += unidades[k]
 	}else{
 		if k > 30 && n[2] != '0' {
-			final += Decenas[n[1] - 50] + "Y " + Unidades[n[2] - 48]
+			final += decenas[n[1] - 50] + "Y " + unidades[n[2] - 48]
 		}else{
-			final += Decenas[n[1] - 50] + Unidades[n[2] - 48]
+			final += decenas[n[1] - 50] + unidades[n[2] - 48]
 		}
 	}
 
