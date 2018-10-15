@@ -122,24 +122,29 @@ func FloatLetterEn(numero string) string {
 	millions := numeroFill[ : 3]
 	thousands := numeroFill[3 : 6]
 	hundreads := numeroFill[6 : ]
+	
+	var s bool
 
 	if millions != "000" {
 		convertido += fmt.Sprintf("%sMILLION ", ConvertGroup(millions, "en") )
+		s = true
 	}
 
 	if thousands != "000" {
 		convertido += fmt.Sprintf("%sTHOUSAND ", ConvertGroup(thousands, "en") )
-
+		s = true
 	}
 
 	if f, _ := strconv.Atoi(hundreads); f > 0 {
-
+		
 		convertido += ConvertGroup(hundreads, "en")
-
+		s = true
 	}
-
-	valor_convertido = convertido
-	
+	if s {
+		valor_convertido = convertido
+	}else{
+		valor_convertido = "ZERO "
+	}
 
 	if decimales != "" {
 		valor_convertido += "POINT " + decimales
