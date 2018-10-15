@@ -1,5 +1,5 @@
 # numletter
-Programa en go que dado un número no negativo, el nombre de moneda y céntimos, desplegara el número en letras al español y un tipo de número flotante con metodo convertidor al español e ingles ("es" y "en" ) respectivamente, ambos con un limite del número de 999,999,999
+Programa en go que dado un número no negativo y no mayor a 999,999,999, el nombre de moneda y céntimos, desplegara el número en letras al español, y un tipo de número flotante con metodo convertidor al español e ingles ("es" y "en" ) respectivamente
 
 Por ejemplo:
 
