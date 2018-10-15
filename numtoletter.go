@@ -31,7 +31,7 @@ var unidades = []string{
 }
 
 var decenas = []string{
-	"VENTI",
+    "VEINTI",
     "TREINTA ",
     "CUARENTA ",
     "CINCUENTA ",
@@ -42,7 +42,7 @@ var decenas = []string{
 }
 
 var centenas = []string{
-	"CIENTO ",
+    "CIENTO ",
     "DOSCIENTOS ",
     "TRESCIENTOS ",
     "CUATROCIENTOS ",
