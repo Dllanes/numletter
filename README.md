@@ -1,9 +1,9 @@
 # numletter
-Programa en go que dado un número no negativo y no mayor a 999,999,999, el nombre de moneda y céntimos, desplegara el número en letras al español, y un tipo de número flotante con metodo convertidor al español e ingles ("es" y "en" ) respectivamente
+Programa en go que dado un número no negativo y no mayor a 999,999,999 en forma de string, el nombre de moneda y céntimos, desplegara el número en letras al español, y un tipo de número flotante con metodo convertidor al español e ingles ("es" y "en" ) respectivamente
 
 Por ejemplo:
 
-Num2Letter(987654.32, "Pesos", "Centavos", false)
+Num2Letter("987654.32", "Pesos", "Centavos", false)
 
 debe devolver:
 
